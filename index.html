@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Thosini S - Computer Science and Technology Student Portfolio">
+<title>Thosini S | Professional Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#080c19;
+  --surface:#10182b;
+  --surface2:#17223a;
+  --text:#f5f7ff;
+  --muted:#a5b0c7;
+  --accent:#a78bfa;
+  --accent2:#67e8f9;
+  --border:rgba(255,255,255,.09);
+  --shadow:0 15px 45px rgba(0,0,0,.18);
+  --header:rgba(8,12,25,.92);
+}
+
+body.light {
+  --bg:#f5f7ff;
+  --surface:#ffffff;
+  --surface2:#edf0ff;
+  --text:#18213b;
+  --muted:#66708a;
+  --accent:#7047e8;
+  --accent2:#087f9b;
+  --border:rgba(20,30,60,.12);
+  --shadow:0 15px 45px rgba(50,60,100,.08);
+  --header:rgba(245,247,255,.93);
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.7;
+  transition:background .3s,color .3s;
+}
+
+h1,h2,h3,h4,.logo {
+  font-family:'Space Grotesk',sans-serif;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+button {
+  font-family:inherit;
+}
+
+.container {
+  width:min(1120px,90%);
+  margin:auto;
+}
+
+section {
+  padding:95px 0;
+  scroll-margin-top:80px;
+}
+
+.section-heading {
+  margin-bottom:42px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom:8px;
+}
+
+.section-heading h2 {
+  font-size:clamp(30px,4vw,43px);
+  line-height:1.2;
+  margin-bottom:12px;
+}
+
+.section-heading p {
+  color:var(--muted);
+  max-width:650px;
+}
+
+.eyebrow {
+  color:var(--accent2);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.gradient-text {
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* NAVIGATION */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--header);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+nav {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo {
+  font-size:25px;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.logo span {
+  color:var(--accent2);
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:19px;
+  list-style:none;
+}
+
+.nav-links a {
+  color:var(--muted);
+  font-size:12px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color:var(--accent2);
+}
+
+.nav-actions {
+  display:flex;
+  gap:9px;
+}
+
+.nav-actions button {
+  background:var(--surface2);
+  border:1px solid var(--border);
+  color:var(--text);
+  border-radius:10px;
+  width:40px;
+  height:40px;
+  cursor:pointer;
+  font-size:18px;
+}
+
+#menuBtn {
+  display:none;
+}
+
+/* BUTTONS */
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:700;
+  border:1px solid var(--accent);
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover {
+  transform:translateY(-4px);
+}
+
+.btn-primary {
+  background:linear-gradient(100deg,var(--accent),var(--accent2));
+  color:#101322;
+  border:none;
+}
+
+.btn-outline {
+  color:var(--text);
+  background:transparent;
+}
+
+.btn-small {
+  padding:9px 14px;
+  font-size:12px;
+}
+
+/* HOME */
+
+.hero {
+  min-height:680px;
+  display:flex;
+  align-items:center;
+  padding:85px 0;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(124,58,237,.19),transparent 35%),
+    radial-gradient(circle at 10% 80%,rgba(34,211,238,.08),transparent 35%);
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.5fr .8fr;
+  gap:55px;
+  align-items:center;
+}
+
+.hero h1 {
+  font-size:clamp(42px,6vw,68px);
+  line-height:1.12;
+  margin:18px 0;
+}
+
+.hero-description {
+  color:var(--muted);
+  font-size:16px;
+  max-width:650px;
+}
+
+.hero-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:27px;
+}
+
+.social-links {
+  display:flex;
+  gap:22px;
+  margin-top:27px;
+  flex-wrap:wrap;
+}
+
+.social-links a {
+  color:var(--accent2);
+  font-size:13px;
+  font-weight:700;
+}
+
+.profile-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:35px 25px;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+
+.avatar {
+  width:155px;
+  height:155px;
+  margin:0 auto 22px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#7047e8,#28bfd6);
+  color:white;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:48px;
+  font-weight:700;
+  border:5px solid var(--surface2);
+  box-shadow:0 0 35px rgba(167,139,250,.22);
+}
+
+.profile-card h2 {
+  font-size:24px;
+  margin-bottom:5px;
+}
+
+.profile-card p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.profile-tags {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.profile-tags span {
+  padding:6px 11px;
+  border-radius:30px;
+  font-size:10px;
+  background:var(--surface2);
+  color:var(--accent2);
+}
+
+/* COMMON CARDS */
+
+.grid-2 {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:27px;
+  box-shadow:var(--shadow);
+  transition:.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  border-color:var(--accent);
+}
+
+.card h3 {
+  font-size:19px;
+  margin-bottom:10px;
+}
+
+.card p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.card-icon {
+  font-size:27px;
+  margin-bottom:13px;
+}
+
+.info-list {
+  list-style:none;
+}
+
+.info-list li {
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  font-size:13px;
+  overflow-wrap:anywhere;
+}
+
+.info-list strong {
+  color:var(--accent2);
+}
+
+/* ABOUT */
+
+.about-highlight {
+  color:var(--accent2);
+  font-weight:700;
+}
+
+.about-note {
+  margin-top:17px;
+  padding:14px;
+  background:var(--surface2);
+  border-radius:10px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* EDUCATION */
+
+.education-card {
+  border-left:4px solid var(--accent);
+}
+
+.education-year {
+  color:var(--accent2)!important;
+  font-weight:700;
+  margin-bottom:9px;
+}
+
+.education-card h3 {
+  font-size:23px;
+}
+
+/* SKILLS */
+
+.skill-group h3 {
+  margin-bottom:15px;
+}
+
+.skill-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.skill-list span {
+  padding:8px 13px;
+  border-radius:9px;
+  background:var(--surface2);
+  border:1px solid var(--border);
+  color:var(--text);
+  font-size:12px;
+  transition:.3s;
+}
+
+.skill-list span:hover {
+  border-color:var(--accent);
+  color:var(--accent2);
+}
+
+/* PROJECTS */
+
+.project-card {
+  display:flex;
+  flex-direction:column;
+}
+
+.project-card .project-category {
+  color:var(--accent2);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
+
+.project-card h3 {
+  font-size:21px;
+  line-height:1.4;
+  margin-bottom:13px;
+}
+
+.project-card .skill-list {
+  margin:20px 0;
+}
+
+.project-links {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:auto;
+}
+
+.project-links a {
+  font-size:12px;
+  font-weight:700;
+  color:var(--accent2);
+}
+
+.project-filters {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.filter-btn {
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--muted);
+  border-radius:30px;
+  padding:9px 16px;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background:var(--accent);
+  color:#111;
+  border-color:var(--accent);
+}
+
+.project-card.hidden {
+  display:none;
+}
+
+/* INTERNSHIP AND TIMELINE */
+
+.timeline {
+  border-left:2px solid var(--accent);
+  padding-left:28px;
+  margin-left:8px;
+}
+
+.timeline-item {
+  position:relative;
+  margin-bottom:32px;
+}
+
+.timeline-item:last-child {
+  margin-bottom:0;
+}
+
+.timeline-item::before {
+  content:"";
+  position:absolute;
+  left:-36px;
+  top:7px;
+  width:13px;
+  height:13px;
+  background:var(--accent2);
+  border-radius:50%;
+  box-shadow:0 0 12px var(--accent2);
+}
+
+.timeline-item h3 {
+  font-size:19px;
+  margin-bottom:5px;
+}
+
+.timeline-item .sub {
+  color:var(--accent2);
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+.timeline-item p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* COURSES */
+
+.course-item {
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+}
+
+.course-icon {
+  min-width:42px;
+  height:42px;
+  border-radius:11px;
+  background:var(--surface2);
+  display:grid;
+  place-items:center;
+  font-size:19px;
+}
+
+.course-item h3 {
+  font-size:16px;
+  margin-bottom:4px;
+}
+
+.course-item p {
+  font-size:13px;
+}
+
+/* ACHIEVEMENTS */
+
+.achievement-card {
+  position:relative;
+  overflow:hidden;
+}
+
+.achievement-card .card-icon {
+  font-size:30px;
+}
+
+/* RESUME */
+
+.resume-box {
+  text-align:center;
+  padding:55px 25px;
+  border:1px solid var(--border);
+  border-radius:23px;
+  background:
+    linear-gradient(120deg,rgba(124,58,237,.18),rgba(34,211,238,.08));
+}
+
+.resume-box h2 {
+  font-size:clamp(27px,4vw,38px);
+  margin:12px 0;
+}
+
+.resume-box p {
+  color:var(--muted);
+  max-width:600px;
+  margin:0 auto 25px;
+}
+
+/* CONTACT */
+
+.contact-details {
+  display:flex;
+  flex-direction:column;
+  gap:17px;
+}
+
+.contact-item {
+  padding-bottom:14px;
+  border-bottom:1px solid var(--border);
+}
+
+.contact-item small {
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.contact-item strong,
+.contact-item a {
+  font-size:14px;
+  overflow-wrap:anywhere;
+}
+
+.contact-item a:hover {
+  color:var(--accent2);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width:100%;
+  padding:13px 15px;
+  margin-bottom:13px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--surface2);
+  color:var(--text);
+  font:inherit;
+  font-size:13px;
+  outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color:var(--accent);
+}
+
+.contact-form textarea {
+  min-height:135px;
+  resize:vertical;
+}
+
+/* FOOTER */
+
+footer {
+  text-align:center;
+  padding:30px 15px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:12px;
+}
+
+footer strong {
+  color:var(--accent);
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.back-top {
+  position:fixed;
+  bottom:25px;
+  right:22px;
+  width:45px;
+  height:45px;
+  border:0;
+  border-radius:12px;
+  background:var(--accent);
+  color:#111;
+  font-size:20px;
+  cursor:pointer;
+  display:none;
+  z-index:900;
+  box-shadow:var(--shadow);
+}
+
+.back-top.show {
+  display:block;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px) {
+  .nav-links {
+    gap:11px;
+  }
+
+  .nav-links a {
+    font-size:11px;
+  }
+
+  .hero-grid {
+    gap:30px;
+  }
+
+  .grid-3 {
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:760px) {
+  #menuBtn {
+    display:block;
+  }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    width:100%;
+    background:var(--surface);
+    padding:22px 5%;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .nav-links.active {
+    display:flex;
+  }
+
+  .nav-links a {
+    font-size:14px;
+  }
+
+  .hero {
+    min-height:auto;
+    padding:75px 0;
+  }
+
+  .hero-grid,
+  .grid-2,
+  .grid-3 {
+    grid-template-columns:1fr;
+  }
+
+  .hero-grid {
+    gap:35px;
+  }
+
+  .hero h1 {
+    font-size:43px;
+  }
+
+  .profile-card {
+    max-width:390px;
+    width:100%;
+    margin:auto;
+  }
+
+  section {
+    padding:70px 0;
+  }
+
+  .card {
+    padding:23px;
+  }
+}
+
+@media(max-width:400px) {
+  .hero h1 {
+    font-size:36px;
+  }
+
+  .hero-actions .btn {
+    width:100%;
+  }
+
+  .logo {
+    font-size:22px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  * {
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+
+  .reveal {
+    opacity:1;
+    transform:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+<nav class="container">
+
+  <a href="#home" class="logo">Thosini<span>.</span></a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#internship">Internship</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#activities">Achievements</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button id="themeBtn" aria-label="Change theme">☀</button>
+    <button id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
+
+</nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+  <div class="reveal">
+    <p class="eyebrow">Welcome to my portfolio</p>
+
+    <h1>
+      Hello, I'm<br>
+      <span class="gradient-text">Thosini S</span>
+    </h1>
+
+    <h2 style="font-size:22px;margin-bottom:15px;">
+      Aspiring Software Developer
+    </h2>
+
+    <p class="hero-description">
+      I am a third-year B.E. Computer Science and Technology
+      student at Vivekanandha College of Engineering for Women.
+      I am passionate about web development, software development,
+      data analytics and Artificial Intelligence.
+
+      I enjoy learning new technologies and building practical
+      projects that solve real-world problems.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">
+        Explore My Projects ↗
+      </a>
+
+      <a href="#contact" class="btn btn-outline">
+        Contact Me
+      </a>
+    </div>
+
+    <div class="social-links">
+      <a href="https://github.com/thosinisathish-hue"
+         target="_blank" rel="noopener">GitHub ↗</a>
+
+      <a href="https://linkedin.com/in/thosini-s-4062a1328"
+         target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <div class="profile-card reveal">
+
+    <div class="avatar">TS</div>
+
+    <h2>Thosini S</h2>
+
+    <p>B.E. Computer Science and Technology</p>
+
+    <p style="margin-top:8px;">Student Developer | India</p>
+
+    <div class="profile-tags">
+      <span>Web Development</span>
+      <span>Python</span>
+      <span>Data Analytics</span>
+      <span>AI & IoT</span>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+
+  <div class="section-heading reveal">
+    <p class="eyebrow">Get to know me</p>
+    <h2>About <span class="gradient-text">Me</span></h2>
+    <p>A little introduction about my academic and technical journey.</p>
+  </div>
+
+  <div class="grid-2">
+
+    <div class="card reveal">
+      <h3>Who Am I?</h3>
+
+      <p>
+        I am a Computer Science and Technology student
+        at Vivekanandha College of Engineering for Women.
+
+        I have an interest in developing web applications,
+        programming, data analytics and Artificial Intelligence.
+
+        I enjoy participating in technical events, learning
+        new technologies and gaining practical experience
+        through projects and internships.
+      </p>
+
+      <div class="about-note">
+        My goal is to become a skilled IT professional,
+        contribute to meaningful projects and continuously
+        improve my technical and communication skills.
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <h3>Personal Profile</h3>
+
+      <ul class="info-list">
+        <li><strong>Name:</strong> Thosini S</li>
+        <li><strong>Degree:</strong> B.E.</li>
+        <li><strong>Department:</strong> Computer Science and Technology</li>
+        <li><strong>College:</strong> Vivekanandha College of Engineering for Women</li>
+        <li><strong>Study Period:</strong> 2024 – 2028</li>
+        <li><strong>Location:</strong> Tamil Nadu, India</li>
+        <li><strong>Career Interest:</strong> Software Development / IT</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<div class="container">
+
+  <div class="section-heading reveal">
+    <p class="eyebrow">Academic background</p>
+    <h2>My <span class="gradient-text">Education</span></h2>
+  </div>
+
+  <div class="card education-card reveal">
+
+    <p class="education-year">2024 – 2028 | Currently Pursuing</p>
+
+    <h3>Bachelor of Engineering</h3>
+
+    <p class="about-highlight">
+      Computer Science and Technology
+    </p>
+
+    <p>Vivekanandha College of Engineering for Women</p>
+
+    <p>Tamil Nadu, India</p>
+
+    <p style="margin-top:12px;">
+      Currently pursuing undergraduate studies with an
+      interest in programming, software development,
+      data analytics and emerging technologies.
+    </p>
+
+  </div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+
+  <div class="section-heading reveal">
+    <p class="eyebrow">Technical knowledge</p>
+    <h2>My <span class="gradient-text">Skills</span></h2>
+    <p>Technologies, tools and concepts I have studied and practised.</p>
+  </div>
+
+  <div class="grid-3">
+
+    <div class="card skill-group reveal">
+      <h3>💻 Programming</h3>
+      <div class="skill-list">
+        <span>Python</span>
+        <span>Java</span>
+        <span>C++</span>
+        <span>SQL Basics</span>
+      </div>
+    </div>
+
+    <div class="card skill-group reveal">
+      <h3>🌐 Web Development</h3>
+      <div class="skill-list">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript Basics</span>
+        <span>React Basics</span>
+        <span>Responsive Design</span>
+      </div>
+    </div>
+
+    <div class="card skill-group reveal">
+      <h3>📊 Data Analytics</h3>
+      <div class="skill-list">
+        <span>Microsoft Excel</span>
+        <span>Power BI</span>
+        <span>Data Analysis</span>
+        <span>Data Visualization</span>
+      </div>
+    </div>
+
+    <div class="card skill-group reveal">
+      <h3>🛠 Tools</h3>
+      <div class="skill-list">
+        <span>VS Code</span>
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>Power BI</span>
+        <span>Microsoft Office</span>
+      </div>
+    </div>
+
+    <div class="card skill-group reveal">
+      <h3>⭐ Professional Skills</h3>
+      <div class="skill-list">
+        <span>Teamwork</span>
+        <span>Problem Solving</span>
+        <span>Quick Learning</span>
+        <span>Communication</span>
+        <span>Time Management</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+
+  <div class="section-heading reveal">
+    <p class="eyebrow">My work and practical learning</p>
+    <h2>Featured <span class="gradient-text">Projects</span></h2>
+    <p>Academic and practical projects demonstrating my technical interests.</p>
+  </div>
+
+  <div class="project-filters reveal">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="ai">AI & IoT</button>
+    <button class="filter-btn" data-filter="data">Data Analytics</button>
+  </div>
+
+  <div class="grid-2">
+
+    <div class="card project-card reveal" data-category="ai">
+
+      <p class="project-category">ACADEMIC PROJECT</p>
+
+      <h3>AI-Based Smart Energy Meter with Web Dashboard and Anomaly Detection Using IoT</h3>
+
+      <p>
+        An IoT-based smart energy monitoring system designed
+        to monitor real-time electricity consumption through
+        a web dashboard.
+
+        The project explores anomaly detection techniques
+        to identify unusual energy usage patterns and
+        support energy conservation.
+      </p>
+
+      <div class="skill-list">
+        <span>ESP32</span>
+        <span>PZEM-004T</span>
+        <span>IoT</span>
+        <span>AI</span>
+        <span>Machine Learning</span>
+        <span>Web Dashboard</span>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/thosinisathish-hue"
+           target="_blank" rel="noopener">GitHub Profile ↗</a>
+      </div>
+
+    </div>
+
+    <div class="card project-card reveal" data-category="data">
+
+      <p class="project-category">DATA ANALYTICS PROJECT</p>
+
+      <h3>Zomato Data Analytics Dashboard</h3>
+
+      <p>
+        A data analytics project using Zomato-related data.
+        The project focuses on organising information,
+        analysing restaurant-related data and presenting
+        useful insights through interactive dashboards.
+      </p>
+
+      <div class="skill-list">
+        <span>Microsoft Excel</span>
+        <span>Power BI</span>
+        <span>Data Analysis</span>
+        <span>Dashboard</span>
+        <span>Data Visualization</span>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/thosinisathish-hue"
+           target="_blank" rel="noopener">GitHub Profile ↗</a>
+      </div>
+
+    </div>
+
+</section>
+
+<!-- INTERNSHIP -->
+<section id="internship">
+<div class="container">
+
+  <div class="section-heading reveal">
+    <p class="eyebrow">Practical experience</p>
+    <h2>Internship <span class="gradient-text">& Experience</span></h2>
+  </div>
+
+  <div class="card reveal">
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <h3>Data Business and Analytics</h3>
+
+        <p class="sub">SAN Technovation Pvt. Ltd.</p>
+
+        <p><strong>Location:</strong> Perundurai, Erode, Tamil Nadu</p>
+
+        <p><strong>Duration:</strong> 15 Days</p>
+
+        <p style="margin-top:12px;">
+          Gained practical exposure to data business
+          and analytics concepts.
+
+          Worked on a Zomato dashboard project using
+          Microsoft Excel and Power BI, focusing on
+          data organisation, analysis and visualization.
+        </p>
+
+        <div class="skill-list" style="margin-top:15px;">
+          <span>Power BI</span>
+          <span>Excel</span>
+          <span>Data Analytics</span>
+          <span>Dashboard Development</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+<div class="container">
+
+  <div class="section-heading reveal">
+    <p class="eyebrow">Continuous learning</p>
+    <h2>Courses & <span class="gradient-text">Learning</span></h2>
+    <p>Programming courses and additional technical learning.</p>
+  </div>
+
+  <div class="grid-2">
+
+    <div class="card course-item reveal">
+      <div class="course-icon">💻</div>
+      <div>
+        <h3>C++ Programming</h3>
+        <p>Cybernaut</p>
+        <p>Programming fundamentals and problem-solving concepts.</p>
+      </div>
+    </div>
+
+    <div class="card course-item reveal">
+      <div class="course-icon">☕</div>
+      <div>
+        <h3>Java Programming</h3>
+        <p>Cybernaut</p>
+        <p>Programming and object-oriented concepts.</p>
+      </div>
+    </div>
+
+    <div class="card course-item reveal">
+      <div class="course-icon">🐍</div>
+      <div>
+        <h3>Python Programming</h3>
+        <p>Cybernaut</p>
+        <p>Python programming fundamentals.</p>
+      </div>
+    </div>
+
+    <div class="card course-item reveal">
+      <div class="course-icon">🎓</div>
+      <div>
+        <h3>NPTEL – Affective Computing</h3>
+        <p>12-week course | January – April 2026</p>
+        <p>Completed the course and reported score of 56%.</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="activities">
+<div class="container">
+
+  <div class="section-heading reveal">
+    <p class="eyebrow">Beyond academics</p>
+    <h2>Events & <span class="gradient-text">Achievements</span></h2>
+    <p>Technical events, competitions, research and academic participation.</p>
+  </div>
+
+  <div class="grid-2">
+
+    <div class="card achievement-card reveal">
+
+      <div class="card-icon">🏆</div>
+
+      <h3>24-Hour Hackathon</h3>
+
+      <p class="about-highlight">FORGEXAI 2026</p>
+
+      <p>Erode Sengunthar Engineering College.</p>
+
+      <p>Participated in a 24-hour hackathon event.</p>
+
+    </div>
+
+    <div class="card achievement-card reveal">
+
+      <div class="card-icon">🎤</div>
+
+      <h3>Symposium Participation</h3>
+
+      <p class="about-highlight">Kongu Engineering College</p>
+
+      <p>Perundurai, Erode.</p>
+
+      <p>Participated in a technical symposium.</p>
+
+    </div>
+
+    <div class="card achievement-card reveal">
+
+      <div class="card-icon">📄</div>
+
+      <h3>Paper Presentation</h3>
+
+      <p class="about-highlight">TECH INNOVA'26</p>
+
+      <p>Indra Ganesan College of Engineering, Tiruchirappalli.</p>
+
+      <p>Presented an AI and IoT-based smart energy meter project.</p>
+
+    </div>
+
+    <div class="card achievement-card reveal">
+
+      <div class="card-icon">🔬</div>
+
+      <h3>Academic Research Project</h3>
+
+      <p class="about-highlight">AI & IoT</p>
+
+      <p>Smart Energy Meter with Web Dashboard and Anomaly Detection.</p>
+
+      <p>Exploring intelligent energy monitoring technologies.</p>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+<div class="container">
+
+  <div class="resume-box reveal">
+
+    <p class="eyebrow">My professional profile</p>
+
+    <h2>Let's Explore My <span class="gradient-text">Resume</span></h2>
+
+    <p>
+      Interested in knowing more about my education,
+      technical skills, projects and practical experience?
+      View or download my resume.
+    </p>
+
+    <a href="1000241600.jpg"
+       class="btn btn-primary"
+       target="_blank">
+       View Resume ↗
+    </a>
+
+    <a href="1000241600.jpg"
+       class="btn btn-outline"
+       download>
+       Download Resume ↓
+    </a>
+
+  </div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+
+  <div class="section-heading reveal">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Contact <span class="gradient-text">Me</span></h2>
+    <p>Let's connect for internship opportunities, projects and collaboration.</p>
+  </div>
+
+  <div class="grid-2">
+
+    <div class="card reveal">
+
+      <h3 style="margin-bottom:22px;">Contact Information</h3>
+
+      <div class="contact-details">
+
+        <div class="contact-item">
+          <small>Email</small>
+          <a href="mailto:thosinisathish@gmail.com">
+            thosinisathish@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <small>LinkedIn</small>
+          <a href="https://linkedin.com/in/thosini-s-4062a1328"
+             target="_blank" rel="noopener">
+            View LinkedIn Profile ↗
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <small>GitHub</small>
+          <a href="https://github.com/thosinisathish-hue"
+             target="_blank" rel="noopener">
+            View GitHub Profile ↗
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <small>Location</small>
+          <strong>Tamil Nadu, India</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card reveal">
+
+      <h3 style="margin-bottom:20px;">Send Me a Message</h3>
+
+      <form class="contact-form" id="contactForm">
+
+        <input type="text"
+               id="senderName"
+               placeholder="Your Name"
+               required>
+
+        <input type="email"
+               id="senderEmail"
+               placeholder="Your Email"
+               required>
+
+        <input type="text"
+               id="subject"
+               placeholder="Subject"
+               required>
+
+        <textarea id="message"
+                  placeholder="Write your message..."
+                  required></textarea>
+
+        <button type="submit" class="btn btn-primary">
+          Send Message ↗
+        </button>
+
+      </form>
+
+      <p style="font-size:11px;color:var(--muted);margin-top:12px;">
+        This form opens your email application to send the message.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="year"></span> <strong>Thosini S</strong>. All Rights Reserved.</p>
+  <p>Designed and developed with HTML, CSS and JavaScript.</p>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+
+// MOBILE MENU
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  menuBtn.textContent =
+    navLinks.classList.contains("active") ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuBtn.textContent = "☰";
+  });
+});
+
+
+// DARK AND LIGHT MODE
+
+const themeBtn = document.getElementById("themeBtn");
+
+if (localStorage.getItem("portfolioTheme") === "light") {
+  document.body.classList.add("light");
+  themeBtn.textContent = "☾";
+}
+
+themeBtn.addEventListener("click", () => {
+
+  document.body.classList.toggle("light");
+
+  const isLight = document.body.classList.contains("light");
+
+  themeBtn.textContent = isLight ? "☾" : "☀";
+
+  localStorage.setItem(
+    "portfolioTheme",
+    isLight ? "light" : "dark"
+  );
+
+});
+
+
+// SCROLL REVEAL ANIMATION
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+
+  });
+
+}, {
+  threshold:0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+
+// PROJECT FILTER
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    const selected = button.dataset.filter;
+
+    projectCards.forEach(card => {
+
+      if (
+        selected === "all" ||
+        card.dataset.category === selected
+      ) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+
+    });
+
+  });
+
+});
+
+
+// ACTIVE NAVIGATION
+
+const sections = document.querySelectorAll("main section[id]");
+const navigationLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+
+    const sectionTop = section.offsetTop - 130;
+
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+
+  });
+
+  navigationLinks.forEach(link => {
+
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+
+  });
+
+});
+
+
+// BACK TO TOP
+
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 450) {
+    backTop.classList.add("show");
+  } else {
+    backTop.classList.remove("show");
+  }
+
+});
+
+backTop.addEventListener("click", () => {
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+});
+
+
+// CONTACT FORM
+
+document.getElementById("contactForm").addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  const name = document.getElementById("senderName").value.trim();
+  const email = document.getElementById("senderEmail").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  const myEmail = "thosinisathish@gmail.com";
+
+  const body =
+    "Name: " + name +
+    "\nEmail: " + email +
+    "\n\nMessage:\n" + message;
+
+  const mailLink =
+    "mailto:" + myEmail +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+
+  window.location.href = mailLink;
+
+});
+
+
+// CURRENT YEAR
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
+
